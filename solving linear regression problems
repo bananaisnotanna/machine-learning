@@ -1,0 +1,22 @@
+from sklearn.datasets import load_iris
+
+irisData=load_iris()
+irisData
+
+from sklearn.linear_model import LinearRegression
+
+model=LinearRegression()
+model
+
+irisData.data[:]
+
+
+inputx=irisData.data[:,[2]]
+outputy=irisData.data[:,[3]]
+
+model.fit(inputx,outputy)
+
+petal_length=float(input("enter petal length:     "))
+
+
+print("petal length:":model.predict([[petal_length]]))
