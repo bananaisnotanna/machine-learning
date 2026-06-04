@@ -1,0 +1,28 @@
+from sklearn.linear_model import LogisticRegression
+model=LogisticRegression()
+
+from sklearn.datasets import load_wine
+wine_data=load_wine()
+wine_data
+
+import pandas as pd
+wineDF=pd.DataFrame(wine_data.data,columns=wine_data.feature_names)
+wineDF
+
+x=wine_data.data
+x
+
+y=wine_data.target
+y
+
+model.fit(x,y)
+
+model.predict([x[62]])[0]
+
+labels={
+     0:'class 0'
+     1:'class 1'
+     2:'class 2'
+}
+
+labels[model.predict]
