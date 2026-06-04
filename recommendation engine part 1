@@ -1,0 +1,21 @@
+from sklearn.datasets import load_iris
+datairis=load_iris()
+datairis
+
+datairis.data
+
+sepalLen=pd.DataFrame(datairis.data[:,0])
+sepalLen
+
+sepalW=datairis.data[:,1]
+sepalW
+
+
+from sklearn.model_selection import train_test_split
+sepalLen_train,sepalLen_test,sepalW_train,sepalW_test=train_test_split(sepalLen,sepalW,test_size=0.2)
+
+from sklearn.linear_model import LinearRegression
+model=LinearRegression()
+model.fit(sepalLen_train,sepalW_train)
+
+model.predict(sepalLen_test)
